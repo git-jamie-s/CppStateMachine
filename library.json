@@ -1,0 +1,22 @@
+{
+    "name": "CppStateMachine",
+    "version": "1.0.0",
+    "description": "A statemachine that uses classes to define states",
+    "keywords": "statemachine",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/git_jamie_s/cpp-state-machine.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Jamie Strachan",
+        "email": "sphericalsoft@gmail.com"
+      }
+    ],
+    "license": "MIT",
+    "homepage": "https://www.helloworld.org/",
+    "frameworks": "*",
+    "platforms": "*"
+  }
