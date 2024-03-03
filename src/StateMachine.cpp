@@ -36,7 +36,9 @@ void StateMachine::fire(int trigger)
     StateMachineEdgePtr_t edge = findEdge(currentState, trigger);
     if (edge) {
         State * next = edge->targetState;
-        STATE_DEBUG("State change: %s --> %s\n", currentState->name(), next->name());
+        STATE_DEBUG("State change:");
+        STATE_DEBUG(currentState->name());
+        STATE_DEBUG(next->name());
         currentState->exit();
         currentState = next;
         currentState->enter();
@@ -65,6 +67,7 @@ StateMachineEdgePtr_t StateMachine::findEdge(State* sourceState, int trigger)
             return edge;
         }
     }
-    STATE_DEBUG("Failed to find edge for trigger! %s %d\n", sourceState->name(), trigger);
+    STATE_DEBUG("Failed to find edge for trigger!");
+    STATE_DEBUG(sourceState->name());
     return NULL;
 }

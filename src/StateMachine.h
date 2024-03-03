@@ -3,7 +3,7 @@
 
 #include "State.h"
 
-// #define STATE_DEBUG Serial.printf
+#define STATE_DEBUG Serial.println
 
 class StateMachineEdge
 {
