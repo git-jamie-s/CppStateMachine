@@ -1,6 +1,6 @@
 {
     "name": "CppStateMachine",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A statemachine that uses classes to define states",
     "keywords": "statemachine",
     "repository":
