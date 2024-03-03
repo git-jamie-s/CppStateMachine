@@ -1,4 +1,7 @@
 #include <Arduino.h>
+
+// Turn on Serial.print statements
+#define STATE_DEBUG 1
 #include <StateMachine.h> 
 
 // Set the LED GPIO that we want to control
