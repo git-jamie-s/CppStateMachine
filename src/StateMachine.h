@@ -3,7 +3,7 @@
 
 #include "State.h"
 
-#define STATE_DEBUG Serial.printf
+// #define STATE_DEBUG Serial.printf
 
 class StateMachineEdge
 {
@@ -23,8 +23,10 @@ typedef StateMachineEdge* StateMachineEdgePtr_t;
 
 class StateMachine
 {
+  size_t const stateMachineEdgeBytes = sizeof(StateMachineEdge);
+
   public:
-    StateMachine();
+    StateMachine(int reserved=1);
     ~StateMachine();
 
     void addTransition(State const *startingState, int trigger, State *targetState);
@@ -38,7 +40,9 @@ class StateMachine
     StateMachineEdgePtr_t findEdge(State* currentState, int trigger);
     State *currentState = NULL;
 
-    std::vector<StateMachineEdgePtr_t> transitionTable;
+    StateMachineEdgePtr_t *transitionTable;
+    int transitionTableSize;
+    int transitionTableCount;
 };
 
 #endif 

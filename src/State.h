@@ -2,7 +2,6 @@
 #define _STATE_H
 
 #include <Arduino.h>
-#include <vector>
 
 class State{
   private:

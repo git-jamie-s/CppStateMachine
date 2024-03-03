@@ -1,7 +1,14 @@
 #include "StateMachine.h"
 
-StateMachine::StateMachine(){};
-StateMachine::~StateMachine(){};
+StateMachine::StateMachine(int reserved)
+{
+    transitionTable = (StateMachineEdgePtr_t *)malloc(reserved * stateMachineEdgeBytes);
+    transitionTableSize = reserved;
+    transitionTableCount = 0;
+};
+StateMachine::~StateMachine(){
+    free(transitionTable);
+};
 
 void StateMachine::start(State *startingState)
 {
@@ -38,15 +45,21 @@ void StateMachine::fire(int trigger)
 
 void StateMachine::addTransition(State const *startingState, int trigger, State *targetState)
 {
-    transitionTable.push_back(new StateMachineEdge(startingState, trigger, targetState));
+    
+    if (transitionTableCount + 1 >= transitionTableSize)
+    {
+        // Increase the allocated storage for transition edges.
+        transitionTableSize += 4;
+        transitionTable = (StateMachineEdgePtr_t *)realloc(transitionTable, transitionTableSize * stateMachineEdgeBytes);
+    }
+    transitionTable[transitionTableCount++] = new StateMachineEdge(startingState, trigger, targetState);
 }
 
 StateMachineEdgePtr_t StateMachine::findEdge(State* sourceState, int trigger)
 {
-    int count = transitionTable.size();
-    for(int i=0;i<count;i++)
+    for(int i=0;i<transitionTableCount;i++)
     {
-        StateMachineEdgePtr_t edge = transitionTable.at(i);
+        StateMachineEdgePtr_t edge = transitionTable[i];
         if (edge->sourceState == sourceState && edge->trigger == trigger)
         {
             return edge;
