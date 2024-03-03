@@ -8,7 +8,7 @@ Create states by extending the State base class.
 
 For example, here is a state that turns on a GPIO when it is entered, and turns it off when the state exits:
 ```
-class StateGPIOOn : State
+class StateGPIOOn : public State
 {
   private:
   int gpioPin;
@@ -102,7 +102,9 @@ After the starting state has been set, the state machine is operated by calling 
 Triggers / Events can be injected into the state machine by calling `StateMachine::fire(int trigger)`.
 
 ### Putting it all together
-Please see [LatchMachine.cpp](https://github.com/git-jamie-s/CppStateMachine/blob/main/examples/LatchMachine.cpp) for an example.
+Please see the examples:
+* [Basic Example](https://github.com/git-jamie-s/CppStateMachine/blob/main/examples/BasicExample.cpp)
+* [Latch Machine](https://github.com/git-jamie-s/CppStateMachine/blob/main/examples/LatchMachine.cpp)
 
 # NOTES
 ### Debugging
