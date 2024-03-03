@@ -3,7 +3,13 @@
 
 #include "State.h"
 
+// To disable printing state changes, define STATE_DEBUG(...) before including StateMachine.h
+// IE., 
+// #define STATE_DEBUG(...)
+// #include <StateMachine.h>
+#ifndef STATE_DEBUG
 #define STATE_DEBUG Serial.println
+#endif
 
 class StateMachineEdge
 {
