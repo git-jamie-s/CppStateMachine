@@ -102,7 +102,7 @@ After the starting state has been set, the state machine is operated by calling 
 Triggers / Events can be injected into the state machine by calling `StateMachine::fire(int trigger)`.
 
 ### Putting it all together
-Please see LatchMachine.cpp for an example.
+Please see [LatchMachine.cpp](/git-jamie-s/CppStateMachine/blob/main/examples/LatchMachine.cpp) for an example.
 
 # NOTES
 ### Debugging
