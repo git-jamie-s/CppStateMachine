@@ -1,5 +1,5 @@
 #changelog for SimpleStateMachine
 
-## [0.0.1] - 2024-02-23
-### Initial Commit
+## [1.0.5] - 2024-03-04
+### Initial Viable Release
 
