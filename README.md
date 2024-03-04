@@ -67,9 +67,8 @@ This method may be called to determine the `millis()` time that this state start
 This method may be called to determine how many milliseconds this state has been active.
 
 #### Triggers
-Define all your triggers for the statemachine in an enum, with 0(zero) being NO_TRIGGER. This is important, as the `int loop()` function should return 0 to indicate no trigger.
-Triggers for your state machine should be defined with an `enum`, but any integer will work.
-The value 0 (zero) always means "no trigger"!  Therefore, the first label in your enum should reflect that.
+Define all your triggers for the statemachine in an enum, with 0(zero) being NO_TRIGGER. 
+This is important, as the `int loop()` function should return 0 to indicate no trigger.
 
 For example, a set of triggers for an automated curtain might be:
 ```
@@ -138,6 +137,8 @@ StateMachine stateMachine(10);
 
 // And then call addTranstion 10 times:
 stateMachine.addTransition(...)
+stateMachine.addTransition(...)
+etc...
 ```
 If you do not preallocate a large enough table, addTransition will reallocate a bigger table.
 If you turn on STATE_DEBUG, you will see a message about `Reallocating more edge slots`, indicating that you should preallocate a high number, if you want to avoid reallocations.
