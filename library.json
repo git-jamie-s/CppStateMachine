@@ -16,7 +16,7 @@
       }
     ],
     "license": "MIT",
-    "homepage": "https://www.helloworld.org/",
+    "homepage": "https://github.com/git-jamie-s/CppStateMachine",
     "frameworks": "*",
     "platforms": "*"
   }
