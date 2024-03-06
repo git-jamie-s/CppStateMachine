@@ -170,19 +170,19 @@ void setup() {
   pinMode(RESET_PIN, INPUT_PULLUP);
 
   // Set up the normal timing transitions.
-  stateMachine.addTransition(&stateInit, TRIGGER_TIMEOUT, &stateNSGo);
-  stateMachine.addTransition(&stateNSGo, TRIGGER_TIMEOUT, &stateNSWarn);
+  stateMachine.addTransition(&stateInit,   TRIGGER_TIMEOUT, &stateNSGo);
+  stateMachine.addTransition(&stateNSGo,   TRIGGER_TIMEOUT, &stateNSWarn);
   stateMachine.addTransition(&stateNSWarn, TRIGGER_TIMEOUT, &stateNSStop);
   stateMachine.addTransition(&stateNSStop, TRIGGER_TIMEOUT, &stateEWGo);
-  stateMachine.addTransition(&stateEWGo, TRIGGER_TIMEOUT, &stateEWWarn);
+  stateMachine.addTransition(&stateEWGo,   TRIGGER_TIMEOUT, &stateEWWarn);
   stateMachine.addTransition(&stateEWWarn, TRIGGER_TIMEOUT, &stateEWStop);
   stateMachine.addTransition(&stateEWStop, TRIGGER_TIMEOUT, &stateNSGo);
 
   // Make all states go back to StateInit if RESET is triggered.
-  stateMachine.addTransition(&stateNSGo, TRIGGER_RESET, &stateInit);
+  stateMachine.addTransition(&stateNSGo,   TRIGGER_RESET, &stateInit);
   stateMachine.addTransition(&stateNSWarn, TRIGGER_RESET, &stateInit);
   stateMachine.addTransition(&stateNSStop, TRIGGER_RESET, &stateInit);
-  stateMachine.addTransition(&stateEWGo, TRIGGER_RESET, &stateInit);
+  stateMachine.addTransition(&stateEWGo,   TRIGGER_RESET, &stateInit);
   stateMachine.addTransition(&stateEWWarn, TRIGGER_RESET, &stateInit);
   stateMachine.addTransition(&stateEWStop, TRIGGER_RESET, &stateInit);
 
