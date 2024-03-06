@@ -1,12 +1,12 @@
 {
     "name": "CppStateMachine",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "A statemachine that uses classes to define states",
     "keywords": "statemachine",
     "repository":
     {
       "type": "git",
-      "url": "https://github.com/git_jamie_s/cpp-state-machine.git"
+      "url": "https://github.com/git-jamie-s/CppStateMachine"
     },
     "authors":
     [
@@ -18,5 +18,28 @@
     "license": "MIT",
     "homepage": "https://github.com/git-jamie-s/CppStateMachine",
     "frameworks": "*",
-    "platforms": "*"
+    "platforms": "*",
+    "examples": [
+      {
+          "name": "Basic",
+          "base": "examples",
+          "files": ["BasicExample.cpp"]
+      },
+      {
+          "name": "CurtainControl",
+          "base": "examples",
+          "files": ["CurtainControl.cpp"]
+      },
+      {
+        "name": "LatchMachine",
+        "base": "examples",
+        "files": ["LatchMachine.cpp"]
+      },
+      {
+        "name": "Traffic Light",
+        "base": "examples",
+        "files": ["TrafficLight.cpp"]
+      }
+
+    ]
   }

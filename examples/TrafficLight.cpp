@@ -161,7 +161,7 @@ ModeState stateEWStop("EastWest Stop", ALL_RED, 500);
 StateMachine stateMachine(14);
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   for(int i=0;i<6;i++)
   {
