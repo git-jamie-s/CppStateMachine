@@ -104,6 +104,11 @@ class StateMachine
       }
     }
 
+    State const *getCurrentState()
+    {
+      return currentState;
+    }
+
 
   private:
     // Attributes

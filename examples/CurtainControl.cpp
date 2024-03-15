@@ -208,7 +208,7 @@ void setup() {
   stateMachine.addTransition(&stateClosing, TRIGGER_STOP, &stateWaitForInput);
   stateMachine.addTransition(&stateClosing, TRIGGER_OPEN, &stateOpening);
 
-  stateMachine.init(&stateInit);
+  stateMachine.start(&stateInit);
 }
 
 
